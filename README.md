@@ -11,7 +11,10 @@ One Web API to be consumed by Console App project and MVC project
 - IDE: Visual Studio Community 2017
 - Paradigm or pattern of programming: Object-Oriented Programming (OOP)
 - Data: Data of this demo program are stored in SQL Server database using Entity Framework ORM.
-- NuGet: 
+- NuGet and JS Libraries: jQuery.js, bootstrap.js,  alertify.js, Popper.js, respond.js
+- Notes: Client to consume Web API needs System.Net.Http.Formatting.dll. Install by running "Install-Package Microsoft.AspNet.WebApi.Client" in Package Manager Console.
+- Font: Font Awesome
+- LINQ syntax: LINQ Method and Lambda expression
 
 #### Enhancement (To Do):
 - [ ] Repository (General and Specific) layer with interface
