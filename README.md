@@ -17,6 +17,6 @@ One Web API to be consumed by Console App project and MVC project
 - [ ] Repository (General and Specific) layer with interface
 
 ### Video Demo
-- [Sample Bank ATM C# MVC App with Entity Framework](https://youtu.be/SXCYHWmrupc)
+- [Sample Web API Demo with Multiple Projects](https://youtu.be/Zm0Jtel_n0k)
 
 [If this content is helpful to you, consider to support and buy me a cup of coffee :) ](https://ko-fi.com/V7V2PN67)
