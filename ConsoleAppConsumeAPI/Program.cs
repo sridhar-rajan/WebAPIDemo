@@ -10,6 +10,8 @@ namespace ConsoleAppConsumeAPI
 {
     class Program
     {
+        private const string webAPIURL = "http://localhost:64028/";
+
         static void Main(string[] args)
         {
             while (true)
@@ -51,7 +53,7 @@ namespace ConsoleAppConsumeAPI
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:64028/");
+                client.BaseAddress = new Uri(webAPIURL);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -102,7 +104,7 @@ namespace ConsoleAppConsumeAPI
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:64028/");
+                client.BaseAddress = new Uri(webAPIURL);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -132,7 +134,7 @@ namespace ConsoleAppConsumeAPI
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:64028/");
+                client.BaseAddress = new Uri(webAPIURL);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -174,7 +176,7 @@ namespace ConsoleAppConsumeAPI
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:64028/");
+                client.BaseAddress = new Uri(webAPIURL);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
