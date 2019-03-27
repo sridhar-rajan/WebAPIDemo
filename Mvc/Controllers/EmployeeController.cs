@@ -1,11 +1,6 @@
-﻿using Mvc.Models;
-using Newtonsoft.Json;
-using System;
+﻿using EntityModel;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Mvc.Controllers
@@ -16,9 +11,9 @@ namespace Mvc.Controllers
         // GET: /Employee/
         public ActionResult IndexAsync()
         {
-            IEnumerable<mvcEmployeeModel> empList;
+            IEnumerable<Employee> empList;
             HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("Employee").Result;
-            empList = response.Content.ReadAsAsync<IEnumerable<mvcEmployeeModel>>().Result;
+            empList = response.Content.ReadAsAsync<IEnumerable<Employee>>().Result;
 
 
             return View(empList);
@@ -27,15 +22,15 @@ namespace Mvc.Controllers
         public ActionResult AddOrEdit(int id = 0)
         {
             if (id == 0)
-                return View(new mvcEmployeeModel());
+                return View(new Employee());
             else
             {
                 HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("Employee/" + id.ToString()).Result;
-                return View(response.Content.ReadAsAsync<mvcEmployeeModel>().Result);
+                return View(response.Content.ReadAsAsync<Employee>().Result);
             }
         }
         [HttpPost]
-        public ActionResult AddOrEdit(mvcEmployeeModel emp)
+        public ActionResult AddOrEdit(Employee emp)
         {
             if (emp.EmployeeID == 0)
             {
