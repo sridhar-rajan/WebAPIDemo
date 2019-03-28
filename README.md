@@ -7,7 +7,7 @@ One Web API to be consumed by Console App project and MVC project
 - ORM Framework: Entity Framework 6.2 (Code-First Approach)
 - Framework: .NET Framework 4.6.1
 - Total Projects: 5 (1 Web API MVC Project, 2 Class Library Project, 1 MVC Project, 1 Console App Project)
-- Solution Structure Design: 
+- Solution Architecture/Structure Design: 
 1. Domain Entity Model layer
 2. Infrastructure layer 
 3. Application layer (Web API)
