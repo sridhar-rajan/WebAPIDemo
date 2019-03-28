@@ -6,8 +6,12 @@ One Web API to be consumed by Console App project and MVC project
 - Technology: C#
 - ORM Framework: Entity Framework 6.2 (Code-First Approach)
 - Framework: .NET Framework 4.6.1
-- Total Projects: 4 (1 Web API MVC Project, 1 Class Library Project, 1 MVC Project, 1 Console App Project)
-- Solution Structure Design: Web Api layer, Entity and DAL layer, UI: Web and Console layer.
+- Total Projects: 5 (1 Web API MVC Project, 2 Class Library Project, 1 MVC Project, 1 Console App Project)
+- Solution Structure Design: 
+-- Domain Entity Model layer
+-- Infrastructure layer 
+-- Application layer (Web API)
+-- Presentation layer: MVC Web Application and Console App.
 - IDE: Visual Studio Community 2017
 - Paradigm or pattern of programming: Object-Oriented Programming (OOP)
 - Data: Data of this demo program are stored in SQL Server database using Entity Framework ORM.
