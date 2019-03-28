@@ -45,8 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityModel">
-      <HintPath>..\EntityModel\bin\Debug\EntityModel.dll</HintPath>
+    <Reference Include="DomainEntityModel">
+      <HintPath>..\DomainEntityModel\bin\Debug\netstandard2.0\DomainEntityModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

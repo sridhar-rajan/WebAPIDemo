@@ -1,5 +1,5 @@
-﻿using EntityModel;
-using EntityModel.DAL;
+﻿using DomainEntityModel;
+using Infrastructure;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
