@@ -20,6 +20,10 @@ One Web API to be consumed by Console App project and MVC project
 - Font: Font Awesome
 - LINQ syntax: LINQ Method and Lambda expression
 
+#### Solution Architecture/Structure Design:
+![DomainDrivenDesignMicroServiceDependencies](https://user-images.githubusercontent.com/21274590/55128850-0aaf3980-5150-11e9-89e2-148c3f1a8b15.png)
+![DomainDrivenDesignMicroServiceLayers](https://user-images.githubusercontent.com/21274590/55128855-0edb5700-5150-11e9-9ea1-58d45c353dff.png)
+
 #### Enhancement (To Do):
 - [ ] Repository (General and Specific) layer with interface
 
