@@ -5,7 +5,7 @@ One Web API to be consumed by Console App project and MVC project
 ### Software Development Summary
 - Technology: C#
 - ORM Framework: Entity Framework 6.2 (Code-First Approach)
-- Framework: .NET Framework 4.6.1
+- Framework: .NET Framework 4.6.1, .NET Standard 2.0.3
 - Total Projects: 5 (1 Web API MVC Project, 2 Class Library Project, 1 MVC Project, 1 Console App Project)
 - Solution Architecture/Structure Design: 
 1. Domain Entity Model layer
