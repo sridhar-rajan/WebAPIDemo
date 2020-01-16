@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -67,6 +68,17 @@ namespace WebApi.Controllers
         [ResponseType(typeof(Employee))]
         public IHttpActionResult PostEmployee(Employee employee)
         {
+            var duplicateName = db.Employees.Where(b=>b.Name == employee.Name).SingleOrDefault();
+
+            if (duplicateName != null)
+            {
+                var msg = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent(string.Format("Duplicate employee name found. ")),
+                    ReasonPhrase = "Duplicate"
+                };
+                throw new HttpResponseException(msg);
+            }
 
             db.Employees.Add(employee);
             db.SaveChanges();

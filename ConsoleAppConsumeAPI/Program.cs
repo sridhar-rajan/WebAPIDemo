@@ -167,7 +167,7 @@ namespace ConsoleAppConsumeAPI
                 }
                 else
                 {
-                    Console.WriteLine("Internal server Error");
+                    Console.WriteLine("Internal server Error: " + responsePost.ReasonPhrase);
                 }
             }
 
