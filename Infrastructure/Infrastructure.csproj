@@ -52,13 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="Migrations\202001030447329_initial.cs" />
-    <Compile Include="Migrations\202001030447329_initial.Designer.cs">
-      <DependentUpon>202001030447329_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001030502570_bankaccount.cs" />
-    <Compile Include="Migrations\202001030502570_bankaccount.Designer.cs">
-      <DependentUpon>202001030502570_bankaccount.cs</DependentUpon>
+    <Compile Include="Migrations\202004100628305_initial.cs" />
+    <Compile Include="Migrations\202004100628305_initial.Designer.cs">
+      <DependentUpon>202004100628305_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,11 +64,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001030447329_initial.resx">
-      <DependentUpon>202001030447329_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001030502570_bankaccount.resx">
-      <DependentUpon>202001030502570_bankaccount.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004100628305_initial.resx">
+      <DependentUpon>202004100628305_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

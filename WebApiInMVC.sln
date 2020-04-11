@@ -28,8 +28,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application_Service", "Application_Service\Application_Service.csproj", "{342A8A93-047C-44F2-8F89-81E57B120A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppUI", "ConsoleAppUI\ConsoleAppUI.csproj", "{72FB2EC9-5087-4F0C-96AA-B3B406B7C95B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,10 +58,6 @@ Global
 		{342A8A93-047C-44F2-8F89-81E57B120A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{342A8A93-047C-44F2-8F89-81E57B120A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{342A8A93-047C-44F2-8F89-81E57B120A41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72FB2EC9-5087-4F0C-96AA-B3B406B7C95B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72FB2EC9-5087-4F0C-96AA-B3B406B7C95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72FB2EC9-5087-4F0C-96AA-B3B406B7C95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72FB2EC9-5087-4F0C-96AA-B3B406B7C95B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
