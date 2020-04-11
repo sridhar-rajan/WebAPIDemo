@@ -1,5 +1,5 @@
 ﻿using DomainEntityModel;
-using Infrastructure;
+using Infrastructure.Context;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -23,15 +23,17 @@ namespace WebApi.Controllers
 
         // GET api/Employee/5
         [ResponseType(typeof(Employee))]
-        public IHttpActionResult GetEmployee(int id)
+        public HttpResponseMessage GetEmployee(int id)
         {
             Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
-                return NotFound();
+                var message = string.Format("Employee with id = {0} not found", id);
+                HttpError err = new HttpError(message);
+                return Request.CreateResponse(HttpStatusCode.NotFound, err);                
             }
-
-            return Ok(employee);
+            
+            return Request.CreateResponse(HttpStatusCode.OK, employee);
         }
 
         // PUT api/Employee/5

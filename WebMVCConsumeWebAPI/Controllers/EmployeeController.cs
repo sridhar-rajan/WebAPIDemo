@@ -6,27 +6,48 @@ using System.Web.Mvc;
 
 namespace WebMVCConsumeWebAPI.Controllers
 {
+    [HandleError]
     public class EmployeeController : Controller
     {
         //
         // GET: /Employee/
         public ActionResult Index()
         {
-            IEnumerable<Employee> empList;
+            IEnumerable<Employee> empList = null;
+
+            // Call the Web API which its controller name is "Employee"
             HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("Employee").Result;
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.Error = "Web API call error. Error status code: " + response.StatusCode;
+                return View(empList);
+            }
+
+            // If the Web API call is successful (response status code 200),
+            // it will return/response back with IEnumerable<Employee> data
             empList = response.Content.ReadAsAsync<IEnumerable<Employee>>().Result;
 
 
             return View(empList);
         }
 
+        
         public ActionResult AddOrEdit(int id = 0)
         {
             if (id == 0)
                 return View(new Employee());
             else
             {
-                HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("Employee/" + id.ToString()).Result;
+                // Call the Web API which its controller name is "Employee"
+                HttpResponseMessage response 
+                    = GlobalVariables.WebApiClient.GetAsync("Employee/" + id.ToString()).Result;
+
+                if(!response.IsSuccessStatusCode)
+                {
+                    ViewBag.Error = "Web API call error. Error status code: " + response.StatusCode;
+                    return View();
+                }
                 return View(response.Content.ReadAsAsync<Employee>().Result);
             }
         }

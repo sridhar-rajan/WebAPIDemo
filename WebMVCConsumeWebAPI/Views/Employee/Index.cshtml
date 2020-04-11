@@ -8,6 +8,13 @@
 <p>
     <a href="@Url.Action("AddOrEdit","Employee")" class="btn btn-default"><i class="fa fa-plus"></i> Add Employee</a>
 </p>
+@{ 
+    if (Model == null)
+    {
+        <p>@ViewBag.Error</p>
+    }
+    else
+    {
 <table class="table table-striped">
     <thead class="table-heading">
         <tr>
@@ -50,6 +57,9 @@
     }
 
 </table>
+    }
+}
+
 
 
 @section scripts{
