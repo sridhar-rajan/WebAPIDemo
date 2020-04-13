@@ -13,8 +13,8 @@ namespace WebMVCConsumeWebAPI
 
         static GlobalVariables()
         {
-            WebApiClient.BaseAddress = new Uri("http://localhost:64028/api/");
-            //WebApiClient.BaseAddress = new Uri("http://server-pc:1234/api/");
+            //WebApiClient.BaseAddress = new Uri("http://localhost:64028/api/");
+            WebApiClient.BaseAddress = new Uri("http://api.findingsteve.net/api/");
             WebApiClient.DefaultRequestHeaders.Clear();
             WebApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }

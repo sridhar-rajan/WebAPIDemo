@@ -1,10 +1,18 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
-@if (Model != null)
+
+<h2>Exception Details</h2>
+
+@if (Model != null
+    && System.Web.HttpContext.Current.IsDebuggingEnabled)
 {
-    <p>Application Error</p>
-    <div>
-        @Model.Exception.Message
-        <br />
-        @Model.ControllerName
-    </div>
+    <h3>Exception Type: @Model.Exception.GetType().Name</h3>
+    <p>Custom exception message from controller: @Model.Exception.Message</p>
+    <p>
+        thrown in Controller: @Model.ControllerName
+        and ActionName: @Model.ActionName
+    </p>
+    <p>Note: Exception can be logged as text file using log4net package</p>
+    <pre>
+        @Model.Exception.ToString()
+    </pre>
 }
