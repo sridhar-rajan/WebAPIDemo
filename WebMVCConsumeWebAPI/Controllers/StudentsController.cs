@@ -13,6 +13,11 @@ namespace WebMVCConsumeWebAPI.Controllers
         private const string apiControllerName = "Students";
         private HttpResponseMessage response;
 
+        public ActionResult JQueryCallApi()
+        {
+            return View();
+        }
+
         // GET: Students
         public ActionResult Index()
         {

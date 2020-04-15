@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "JQueryCallApi";
+}
+
+<h2>JQueryCallApi</h2>
+@*Note: jsonp (Web API needs to install WebApiContrib.Formatting.Jsonp) and in WebApiConfig class, register method:
+<pre>
+var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            config.Formatters.Insert(0, jsonpFormatter);
+</pre>
+<a id="btn" href="#">Get all Student Names (dataType: 'jsonp')</a>
+<br /><br />
+Note: json (Web API needs to install Microsoft.AspNet.WebApi.Cors)  and in WebApiConfig class, register method:
+<pre>
+EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:52575", "*", "GET,POST");
+config.EnableCors(cors);
+</pre>*@
+<a id="btn2" href="#">Get all Student Names (dataType: 'json')</a>
+<ul id="result"></ul>
+<script>
+    $(function () {
+        const ulStudents = $('#result');
+        $('#btn').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:64028/api/Students',
+                dataType: 'jsonp',
+                success: function (data) {
+                    ulStudents.empty();
+                    $.each(data, function (index, val) {
+                        ulStudents.append('<li>' + val.FullName + '</li>')
+                    })
+                }
+            })
+        })
+
+        $('#btn2').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:64028/api/Students',
+                dataType: 'json',
+                success: function (data) {
+                    ulStudents.empty();
+                    $.each(data, function (index, val) {
+                        ulStudents.append('<li>' + val.FullName + '</li>')
+                    })
+                }
+            })
+        })
+    })
+</script>

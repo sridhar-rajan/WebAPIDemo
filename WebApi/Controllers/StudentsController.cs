@@ -35,6 +35,38 @@ namespace WebApi.Controllers
             return student;
         }
 
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
+        /// 
+        /// string type doesn't need to be defined
+        /// </summary>
+        /// <param name="FullName"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("api/Students/GetByFullName/{FullName}")]
+        public Student GetByFullName(string FullName)
+        {
+            Student student = studentList.SingleOrDefault(s => s.FullName == FullName);
+            return student;
+        }
+
+        [HttpGet]
+        [Route("api/Students/GetByAge/{Age:int}")]
+        public Student GetByAge(int Age)
+        {
+            Student student = studentList.SingleOrDefault(s => s.Age == Age);
+            return student;
+        }
+
+        [HttpGet]
+        [Route("api/Students/GetByFullNameAge/{FullName}/{Age:int}")]
+        public Student GetByFullNameAndAge(string FullName, int Age)
+        {
+            Student student = studentList
+                .SingleOrDefault(s => s.FullName == FullName && s.Age == Age);
+            return student;
+        }
+
         // POST: api/Students
         public void Post([FromBody]string value)
         {
