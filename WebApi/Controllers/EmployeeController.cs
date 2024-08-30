@@ -26,6 +26,8 @@ namespace WebApi.Controllers
         public HttpResponseMessage GetEmployee(int id)
         {
             Employee employee = db.Employees.Find(id);
+            EmployeeSapService employeeSapService = new EmployeeSapService();
+            var emp = employeeSapService.GetEmployeeProfileAsync(id).Result;
             if (employee == null)
             {
                 var message = string.Format("Employee with id = {0} not found", id);
@@ -39,7 +41,8 @@ namespace WebApi.Controllers
         // PUT api/Employee/5
         public IHttpActionResult PutEmployee(int id, Employee employee)
         {
-
+            EmployeeSapService employeeSapService = new EmployeeSapService();
+            var emp = employeeSapService.UpdateEmployeeProfileAsync(employee).Result;
             if (id != employee.EmployeeID)
             {
                 return BadRequest();
